@@ -1,0 +1,16 @@
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Application.deps.json
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Application.dll
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Application.pdb
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Domain.dll
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Domain.pdb
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.csproj.AssemblyReference.cache
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.AssemblyInfoInputs.cache
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.AssemblyInfo.cs
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.csproj.CoreCompileInputs.cache
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.sourcelink.json
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa..E0718A75.Up2Date
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.dll
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\refint\Boamesa.Application.dll
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.pdb
+C:\Users\suporte\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\ref\Boamesa.Application.dll

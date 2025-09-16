@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "qZEeC0BeLHMZwN3WGQZyX1R5mtnDslcWz+Q2mGTMzG4=",
+  "Source": "Boamesa.Api",
+  "BasePath": "_content/Boamesa.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
