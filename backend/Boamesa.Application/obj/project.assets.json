@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\suporte\\.nuget\\packages\\": {}
+    "C:\\Users\\LUIZ\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj",
+      "projectUniqueName": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj",
       "projectName": "Boamesa.Application",
-      "projectPath": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj",
-      "packagesPath": "C:\\Users\\suporte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\obj\\",
+      "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj",
+      "packagesPath": "C:\\Users\\LUIZ\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\suporte\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\LUIZ\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
-              "projectPath": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj"
+            "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
+              "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj"
             }
           }
         }
@@ -66,7 +66,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -87,7 +88,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

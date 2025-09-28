@@ -1,7 +1,6 @@
-// BoamesaContext.cs
 using Microsoft.EntityFrameworkCore;
-using Boamesa.Domain;
-using Boamesa.Domain.Entities;
+using Boamesa.Domain;             // <-- adicione de volta
+using Boamesa.Domain.Entities;    // <-- mantenha
 
 namespace Boamesa.Infrastructure;
 
@@ -86,6 +85,37 @@ public class BoamesaContext : DbContext
           .HasMany(m => m.Reservas)
           .WithOne(r => r.Mesa)
           .HasForeignKey(r => r.MesaId);
+
+        // ---- Precisão de decimais ----
+        // Monetários (2 casas)
+        mb.Entity<ItemCardapio>()
+          .Property(p => p.PrecoBase)
+          .HasPrecision(10, 2);
+
+        mb.Entity<PedidoItem>()
+          .Property(p => p.PrecoUnitario)
+          .HasPrecision(10, 2);
+
+        mb.Entity<PedidoItem>()
+          .Property(p => p.DescontoAplicado)
+          .HasPrecision(10, 2);
+
+        mb.Entity<AtendimentoDeliveryProprio>()
+          .Property(p => p.TaxaFixa)
+          .HasPrecision(10, 2);
+
+        mb.Entity<AtendimentoDeliveryAplicativo>()
+          .Property(p => p.TaxaFixaParceiro)
+          .HasPrecision(10, 2);
+
+        // Percentuais (fração: 0.20 = 20%)
+        mb.Entity<AtendimentoDeliveryAplicativo>()
+          .Property(p => p.ComissaoPercentual)
+          .HasPrecision(5, 4);
+
+        mb.Entity<SugestaoDoChefe>()
+          .Property(p => p.DescontoPercentual)
+          .HasPrecision(5, 4);
 
         // Índices úteis
         mb.Entity<SugestaoDoChefe>()

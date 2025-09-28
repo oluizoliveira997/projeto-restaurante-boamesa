@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boamesa.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e399a4c08a26f0ad557ef00a15be5b95975b2dfa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b6b644f01141841c6e5e12f9cad447076270189")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boamesa.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boamesa.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

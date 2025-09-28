@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {}
+    "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
+    "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj",
         "projectName": "Boamesa.Domain",
-        "projectPath": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj",
-        "packagesPath": "C:\\Users\\suporte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\suporte\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\obj\\",
+        "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj",
+        "packagesPath": "C:\\Users\\LUIZ\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\suporte\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\LUIZ\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
