@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Boamesa.Application\Boamesa.Application.csproj" />
     <ProjectReference Include="..\Boamesa.Infrastructure\Boamesa.Infrastructure.csproj" />
+    <ProjectReference Include="..\Boamesa.Domain\Boamesa.Domain.csproj" />
   </ItemGroup>
 
 </Project>

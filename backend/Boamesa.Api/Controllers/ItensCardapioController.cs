@@ -2,6 +2,8 @@ using Boamesa.Infrastructure;
 using Boamesa.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Boamesa.Domain.Enums;
+using Boamesa.Domain.Entities;
 
 [ApiController]
 [Route("api/itens")]

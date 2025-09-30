@@ -9,6 +9,7 @@
       "Boamesa.Api/1.0.0": {
         "dependencies": {
           "Boamesa.Application": "1.0.0",
+          "Boamesa.Domain": "1.0.0",
           "Boamesa.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.19",
           "Microsoft.EntityFrameworkCore.Design": "9.0.9",
@@ -1095,7 +1096,9 @@
       },
       "Boamesa.Application/1.0.0": {
         "dependencies": {
-          "Boamesa.Domain": "1.0.0"
+          "Boamesa.Domain": "1.0.0",
+          "Boamesa.Infrastructure": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.9"
         },
         "runtime": {
           "Boamesa.Application.dll": {

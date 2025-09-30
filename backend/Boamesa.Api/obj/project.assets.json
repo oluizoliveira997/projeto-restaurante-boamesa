@@ -1706,7 +1706,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Boamesa.Domain": "1.0.0"
+          "Boamesa.Domain": "1.0.0",
+          "Boamesa.Infrastructure": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.9"
         },
         "compile": {
           "bin/placeholder/Boamesa.Application.dll": {}
@@ -5209,6 +5211,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Boamesa.Application >= 1.0.0",
+      "Boamesa.Domain >= 1.0.0",
       "Boamesa.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.19",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.9",
@@ -5242,6 +5245,9 @@
           "projectReferences": {
             "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj": {
               "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj"
+            },
+            "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
+              "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj"
             },
             "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj"

@@ -30,3 +30,5 @@ C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\
 C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\refint\Boamesa.Application.dll
 C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\Boamesa.Application.pdb
 C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\obj\Debug\net8.0\ref\Boamesa.Application.dll
+C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Infrastructure.dll
+C:\Users\LUIZ\Documents\projeto-restaurante-boamesa\backend\Boamesa.Application\bin\Debug\net8.0\Boamesa.Infrastructure.pdb

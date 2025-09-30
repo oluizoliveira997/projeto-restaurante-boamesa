@@ -29,6 +29,9 @@
               "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj": {
                 "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Application\\Boamesa.Application.csproj"
               },
+              "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
+                "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj"
+              },
               "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj": {
                 "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj"
               }
@@ -113,6 +116,9 @@
             "projectReferences": {
               "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj": {
                 "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Domain\\Boamesa.Domain.csproj"
+              },
+              "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\LUIZ\\Documents\\projeto-restaurante-boamesa\\backend\\Boamesa.Infrastructure\\Boamesa.Infrastructure.csproj"
               }
             }
           }
@@ -132,6 +138,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
