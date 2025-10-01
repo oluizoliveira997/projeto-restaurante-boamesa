@@ -1,7 +1,6 @@
-// Program.cs (Boamesa.Api)
-
 using Boamesa.Infrastructure;              // BoamesaContext + BoamesaContextSeed
-using Boamesa.Application.Services;        // BusinessRuleException + Services
+using Boamesa.Application.Services;        // BusinessRuleException + Services + PasswordHasher
+using Boamesa.Domain.Entities;             // Usuario
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using System.Text.Json;
@@ -35,6 +34,9 @@ builder.Services.AddCors(options =>
             .AllowCredentials()); // deixe true só se usar cookies; para JWT pode remover
 });
 
+// (opcional) Informe a porta HTTPS para evitar warnings de redirecionamento
+builder.Services.AddHttpsRedirection(o => o.HttpsPort = 7270);
+
 // 5) DI dos Services de negócio
 builder.Services.AddScoped<SugestaoDoChefeService>();
 builder.Services.AddScoped<ReservaService>();
@@ -66,11 +68,28 @@ app.Use(async (ctx, next) =>
     }
 });
 
-// 8) Seed inicial de dados (itens, mesas, usuário, etc.)
+// 8) Seed inicial de dados (itens, mesas, e garante 1 usuário demo)
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<BoamesaContext>();
+
+    // garante que o banco existe
+    await db.Database.EnsureCreatedAsync();
+
+    // seu seed existente (mesas, itens, etc.)
     await BoamesaContextSeed.EnsureSeededAsync(db);
+
+    // garante um usuário demo para login fake (email: demo@demo.com / senha: 123456)
+    if (!await db.Usuarios.AnyAsync())
+    {
+        db.Usuarios.Add(new Usuario
+        {
+            Email = "demo@demo.com",
+            SenhaHash = PasswordHasher.Sha256("123456"), // se quiser texto puro, use "123456"
+            CriadoEm = DateTime.UtcNow
+        });
+        await db.SaveChangesAsync();
+    }
 }
 
 // 9) CORS antes dos controllers

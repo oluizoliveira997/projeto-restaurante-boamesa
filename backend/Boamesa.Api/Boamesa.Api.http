@@ -4,3 +4,48 @@ GET {{Boamesa.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Criar usuário
+POST {{host}}/api/usuarios
+Content-Type: application/json
+
+{
+  "email": "novo@teste.com",
+  "senha": "123456"
+}
+
+### Editar usuário
+PUT {{host}}/api/usuarios/1
+Content-Type: application/json
+
+{
+  "email": "atualizado@teste.com",
+  "senha": "654321"
+}
+
+### Deletar usuário
+DELETE {{host}}/api/usuarios/1
+
+@host = https://localhost:7270
+
+### Criar reserva (válida: jantar 19–22h)
+POST {{host}}/api/reservas
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "mesaId": 1,
+  "dataHora": "2025-10-01T19:30:00"
+}
+
+### Obter por id
+GET {{host}}/api/reservas/1
+
+### Listar por data
+GET {{host}}/api/reservas?data=2025-10-01
+
+### Listar todas
+GET {{host}}/api/reservas
+
+### Cancelar
+DELETE {{host}}/api/reservas/1

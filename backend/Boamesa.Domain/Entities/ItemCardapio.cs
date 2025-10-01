@@ -14,4 +14,6 @@ public class ItemCardapio
 
     public List<Ingrediente> Ingredientes { get; set; } = new();
     public List<PedidoItem> PedidoItens { get; set; } = new();
+    
+    public string? ImagemUrl { get; set; } // <- novo
 }
