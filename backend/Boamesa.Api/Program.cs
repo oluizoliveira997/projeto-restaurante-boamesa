@@ -1,8 +1,9 @@
-using Boamesa.Infrastructure;              // BoamesaContext
-using Boamesa.Application.Services;        // << adicione: seus services de negócio
+// Program.cs (Boamesa.Api)
+
+using Boamesa.Infrastructure;              // BoamesaContext + BoamesaContextSeed
+using Boamesa.Application.Services;        // BusinessRuleException + Services
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using System.Net;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,9 +16,8 @@ builder.Services.AddDbContext<BoamesaContext>(opt =>
 builder.Services.AddControllers()
     .AddJsonOptions(o =>
     {
-        // Enums como string (opcional, mas ajuda no Swagger/front)
+        // Enums como string (útil p/ Swagger e front)
         o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-        // Datas já funcionam bem no .NET 8 (DateOnly/TimeOnly suportados)
     });
 
 // 3) Swagger
@@ -32,26 +32,25 @@ builder.Services.AddCors(options =>
             .WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowCredentials()); // deixe true só se for usar cookies; para JWT pode tirar
+            .AllowCredentials()); // deixe true só se usar cookies; para JWT pode remover
 });
 
-// 5) DI dos Services de negócio (IMPORTANTÍSSIMO)
+// 5) DI dos Services de negócio
 builder.Services.AddScoped<SugestaoDoChefeService>();
 builder.Services.AddScoped<ReservaService>();
 builder.Services.AddScoped<PedidoService>();
 
 var app = builder.Build();
 
-// 6) Pipeline
+// 6) Swagger + HTTPS
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 
-// 7) Middleware simples p/ padronizar erros de regra de negócio (422)
+// 7) Middleware p/ padronizar BusinessRuleException -> 422
 app.Use(async (ctx, next) =>
 {
     try
@@ -67,10 +66,17 @@ app.Use(async (ctx, next) =>
     }
 });
 
-// CORS antes dos controllers
+// 8) Seed inicial de dados (itens, mesas, usuário, etc.)
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<BoamesaContext>();
+    await BoamesaContextSeed.EnsureSeededAsync(db);
+}
+
+// 9) CORS antes dos controllers
 app.UseCors("react");
 
-// Mapear controllers
+// 10) Mapear controllers
 app.MapControllers();
 
 app.Run();
