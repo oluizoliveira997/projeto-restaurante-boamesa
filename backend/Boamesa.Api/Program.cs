@@ -41,6 +41,7 @@ builder.Services.AddHttpsRedirection(o => o.HttpsPort = 7270);
 builder.Services.AddScoped<SugestaoDoChefeService>();
 builder.Services.AddScoped<ReservaService>();
 builder.Services.AddScoped<PedidoService>();
+builder.Services.AddScoped<PaymentService>();
 
 var app = builder.Build();
 

@@ -49,3 +49,23 @@ GET {{host}}/api/reservas
 
 ### Cancelar
 DELETE {{host}}/api/reservas/1
+
+### Pagar pedido (PIX) — aprovado
+POST {{host}}/api/payments/process
+Content-Type: application/json
+
+{
+  "pedidoId": 1,
+  "metodo": "pix",
+  "valor": 99.90
+}
+
+### Pagar pedido com valor inválido — recusado
+POST {{host}}/api/payments/process
+Content-Type: application/json
+
+{
+  "pedidoId": 1,
+  "metodo": "cartao",
+  "valor": 0
+}
