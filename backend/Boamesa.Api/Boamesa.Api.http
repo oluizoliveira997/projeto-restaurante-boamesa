@@ -1,36 +1,40 @@
-@Boamesa.Api_HostAddress = http://localhost:5123
+@host = https://localhost:7270
+@json = Content-Type: application/json
+@accept = Accept: application/json
 
-GET {{Boamesa.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+### 1) Login com usuário do seed (demo@demo.com / 123456)
+POST {{host}}/api/auth/login
+{{json}}
 
-###
+{
+  "email": "demo@demo.com",
+  "senha": "123456"
+}
 
-### Criar usuário
+### 2) Criar usuário
 POST {{host}}/api/usuarios
-Content-Type: application/json
+{{json}}
 
 {
   "email": "novo@teste.com",
   "senha": "123456"
 }
 
-### Editar usuário
+### 3) Editar usuário
 PUT {{host}}/api/usuarios/1
-Content-Type: application/json
+{{json}}
 
 {
   "email": "atualizado@teste.com",
   "senha": "654321"
 }
 
-### Deletar usuário
+### 4) Deletar usuário
 DELETE {{host}}/api/usuarios/1
 
-@host = https://localhost:7270
-
-### Criar reserva (válida: jantar 19–22h)
+### 5) Criar reserva (válida: jantar 19–22h)
 POST {{host}}/api/reservas
-Content-Type: application/json
+{{json}}
 
 {
   "usuarioId": 1,
@@ -38,34 +42,57 @@ Content-Type: application/json
   "dataHora": "2025-10-01T19:30:00"
 }
 
-### Obter por id
+### 6) Obter reserva por id
 GET {{host}}/api/reservas/1
+{{accept}}
 
-### Listar por data
+### 7) Listar reservas por data
 GET {{host}}/api/reservas?data=2025-10-01
+{{accept}}
 
-### Listar todas
+### 8) Listar todas reservas
 GET {{host}}/api/reservas
+{{accept}}
 
-### Cancelar
+### 9) Cancelar reserva
 DELETE {{host}}/api/reservas/1
 
-### Pagar pedido (PIX) — aprovado
-POST {{host}}/api/payments/process
-Content-Type: application/json
+### 10) Criar pedido (tipo atendimento: Presencial | DeliveryProprio | DeliveryAplicativo)
+POST {{host}}/api/pedidos
+{{json}}
+
+{
+  "usuarioId": 1,
+  "periodo": "Jantar",
+  "tipoAtendimento": "Presencial",
+  "itens": [
+    { "itemCardapioId": 1, "quantidade": 2, "precoUnitario": 0, "descontoAplicado": 0 },
+    { "itemCardapioId": 2, "quantidade": 1, "precoUnitario": 0, "descontoAplicado": 0 }
+  ]
+}
+
+### 11) Buscar o pedido criado
+GET {{host}}/api/pedidos/1
+{{accept}}
+
+### 12) Pagar pedido (simulado)
+POST {{host}}/api/pagamentos
+{{json}}
 
 {
   "pedidoId": 1,
-  "metodo": "pix",
-  "valor": 99.90
+  "valor": 99.90,
+  "metodo": "Pix"
 }
 
-### Pagar pedido com valor inválido — recusado
-POST {{host}}/api/payments/process
-Content-Type: application/json
+### 13) Listar pedidos do usuário
+GET {{host}}/api/pedidos?usuarioId=1
+{{accept}}
 
-{
-  "pedidoId": 1,
-  "metodo": "cartao",
-  "valor": 0
-}
+### 14) Tentar cancelar pedido pago
+POST {{host}}/api/pedidos/1/cancelar
+{{accept}}
+
+### 15) Me (fake, sem validar token)
+GET {{host}}/api/auth/me/1
+{{accept}}

@@ -112,6 +112,11 @@ public class BoamesaContext : DbContext
         mb.Entity<AtendimentoDeliveryAplicativo>()
           .Property(p => p.ComissaoPercentual)
           .HasPrecision(5, 4);
+        mb.Entity<AtendimentoDeliveryAplicativo>()
+          .HasOne(a => a.ParceiroApp)
+          .WithMany()
+          .HasForeignKey(a => a.ParceiroAppId)
+          .IsRequired(false); // ✅ FK opcional no TPH
 
         mb.Entity<SugestaoDoChefe>()
           .Property(p => p.DescontoPercentual)

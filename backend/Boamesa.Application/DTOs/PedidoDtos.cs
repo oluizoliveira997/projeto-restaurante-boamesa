@@ -1,17 +1,34 @@
-// Boamesa.Application/DTOs/PedidoDtos.cs
 using Boamesa.Domain.Enums;
 
 namespace Boamesa.Application.DTOs;
 
-public record PedidoItemCreateDto(int ItemCardapioId, int Quantidade, decimal PrecoUnitario, decimal DescontoAplicado);
-public record CriarPedidoDto(
-    int UsuarioId,
-    Periodo Periodo,
-    string TipoAtendimento,         // "Presencial" | "DeliveryProprio" | "DeliveryApp"
-    int? ParceiroAppId,
-    decimal? TaxaFixa,              // usado no DeliveryProprio
-    decimal? ComissaoPercentual,    // usado no DeliveryApp (ex.: 0.20 = 20%)
-    decimal? TaxaFixaParceiro,      // usado no DeliveryApp
-    List<PedidoItemCreateDto> Itens
-);
-public record PedidoVm(int Id, Periodo Periodo, string Status, decimal TotalItens, decimal TotalDescontos, decimal TotalTaxas, decimal TotalGeral);
+public class PedidoItemCreateDto
+{
+    public int ItemCardapioId { get; set; }
+    public int Quantidade { get; set; } = 1;
+    public decimal PrecoUnitario { get; set; } = 0;   // se 0, usa PrecoBase do cardápio
+    public decimal DescontoAplicado { get; set; } = 0;
+}
+
+public class PedidoCreateDto
+{
+    public int UsuarioId { get; set; }
+    public Periodo Periodo { get; set; }                // Almoco | Jantar
+    public string TipoAtendimento { get; set; } = "Presencial"; // Presencial | DeliveryProprio | DeliveryAplicativo
+      // ✅ necessário para DeliveryAplicativo
+    public int? ParceiroAppId { get; set; }
+    public List<PedidoItemCreateDto> Itens { get; set; } = new();
+}
+
+// ViewModel que o service retorna ao controller (tem Id!)
+public class PedidoVm
+{
+    public int Id { get; set; }
+    public int UsuarioId { get; set; }
+    public Periodo Periodo { get; set; }
+    public string Status { get; set; } = "";
+    public string AtendimentoTipo { get; set; } = "";
+    public decimal TotalItens { get; set; }
+    public decimal TotalGeral { get; set; }
+    public DateTime DataHora { get; set; }
+}

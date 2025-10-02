@@ -1,3 +1,4 @@
+// Boamesa.Domain/Entities/PedidoItem.cs
 namespace Boamesa.Domain.Entities;
 
 public class PedidoItem
@@ -13,5 +14,10 @@ public class PedidoItem
     public int ItemCardapioId { get; set; }
     public ItemCardapio ItemCardapio { get; set; } = default!;
 
-    public decimal Subtotal() => Quantidade * PrecoUnitario;
+    // Bruto e Desconto explicitados (opcional, mas útil p/ clareza)
+    public decimal SubtotalBruto() => Quantidade * PrecoUnitario;
+    public decimal DescontoTotal() => Quantidade * DescontoAplicado;
+
+    // Líquido = (Preço - Desconto) * Quantidade
+    public decimal Subtotal() => (PrecoUnitario - DescontoAplicado) * Quantidade;
 }
