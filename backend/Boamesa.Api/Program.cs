@@ -52,6 +52,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        // 7 dias = 604800 segundos
+        ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=604800";
+    }
+}); // habilita wwwroot
 
 // 7) Middleware p/ padronizar BusinessRuleException -> 422
 app.Use(async (ctx, next) =>

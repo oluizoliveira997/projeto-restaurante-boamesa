@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Boamesa.Domain;             // <-- adicione de volta
-using Boamesa.Domain.Entities;    // <-- mantenha
+using Boamesa.Domain;             // se você tiver tipos compartilhados aqui
+using Boamesa.Domain.Entities;
 
 namespace Boamesa.Infrastructure;
 
@@ -55,6 +55,15 @@ public class BoamesaContext : DbContext
           .HasValue<AtendimentoPresencial>("Presencial")
           .HasValue<AtendimentoDeliveryProprio>("DeliveryProprio")
           .HasValue<AtendimentoDeliveryAplicativo>("DeliveryAplicativo");
+
+        // 🔧 FK do derivado AtendimentoDeliveryAplicativo -> ParceiroApp
+        // (não configurar essa relação no tipo base!)
+        mb.Entity<AtendimentoDeliveryAplicativo>()
+          .HasOne(a => a.ParceiroApp)
+          .WithMany(p => p.Atendimentos)      // ParceiroApp tem List<AtendimentoDeliveryAplicativo>
+          .HasForeignKey(a => a.ParceiroAppId)
+          .IsRequired(false)                  // FK opcional
+          .OnDelete(DeleteBehavior.NoAction); // evita cascata inesperada
 
         // N-N ItemCardapio <-> Ingrediente
         mb.Entity<ItemCardapio>()
@@ -112,11 +121,6 @@ public class BoamesaContext : DbContext
         mb.Entity<AtendimentoDeliveryAplicativo>()
           .Property(p => p.ComissaoPercentual)
           .HasPrecision(5, 4);
-        mb.Entity<AtendimentoDeliveryAplicativo>()
-          .HasOne(a => a.ParceiroApp)
-          .WithMany()
-          .HasForeignKey(a => a.ParceiroAppId)
-          .IsRequired(false); // ✅ FK opcional no TPH
 
         mb.Entity<SugestaoDoChefe>()
           .Property(p => p.DescontoPercentual)
